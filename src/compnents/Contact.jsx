@@ -29,8 +29,9 @@ export const Contact = () => {
         service: selected,
         message: message,
       };
+
       axios
-        .post("https://koralbackend.herokuapp.com/api/quotation", payload)
+        .post("https://koralbackend.herokuapp.com/api/quotation/", payload)
         .then((response) => {
           console.log(response);
         })
