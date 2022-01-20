@@ -30,10 +30,15 @@ body {
 
 /* topnav */
 .topnav {
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   font-family: "Montserrat", sans-serif;
-  background: rgb(251, 245, 252);
+  background: rgba(251, 245, 252, 0);
   z-index: 100;
+  width: 100%;
+  transition: 0.4s ease-out;
 }
 
 .left {
@@ -209,7 +214,7 @@ body {
   vertical-align: middle;
   text-align: center;
   background: rgb(255, 242, 255);
-  padding: 100px 0px;
+  padding: 100px 20px;
 }
 .c_btn {
   height: 50px;
@@ -239,6 +244,7 @@ body {
   background-size: cover;
   min-height: 130vh;
   z-index: -1;
+  margin-top: 50px;
 }
 .macbook {
   position: absolute;
@@ -406,6 +412,7 @@ body {
   box-shadow: rgb(224 229 231) 5px 5px 25px 0px;
   padding: 20px;
   transition: 0.4s ease-in;
+  background: white;
 }
 
 .label {
@@ -481,4 +488,152 @@ textarea:focus {
 
 #selected {
   float: left;
+}
+
+.contact_wrap {
+  background: linear-gradient(45deg, rgb(203, 203, 255), rgb(255, 234, 234));
+  padding-bottom: 100px;
+}
+
+.App {
+  font-weight: 800;
+  font-size: 40px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.momenu {
+  opacity: 0;
+  z-index: -1;
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .contact_card {
+    width: 90%;
+    margin: 20px auto;
+  }
+  input[type="text"] {
+    width: 100%;
+  }
+  input[type="email"] {
+    width: 100%;
+  }
+  .select {
+    width: 100%;
+  }
+  .imgcon {
+    padding: 0px 40px;
+  }
+  .team_wrapper {
+    padding: 20px 20px;
+  }
+  .team_card {
+    margin: 20px auto;
+    width: 80%;
+  }
+  .about {
+    padding: 10px;
+  }
+  .number {
+    font-size: 90px;
+    font-weight: 900;
+  }
+
+  .a_head {
+    font-size: 40px;
+    letter-spacing: 2px;
+  }
+  .a_content {
+    width: 80%;
+    margin-top: 30px;
+  }
+  .hero {
+    width: 100%;
+    background-image: url(../src/assets/images/apple_shapebg1.png);
+    background-size: cover;
+    min-height: 130vh;
+    z-index: -1;
+    margin-top: 50px;
+  }
+  .macbook {
+    top: 400px;
+    left: -100px;
+    width: 400px;
+  }
+
+  @keyframes float {
+    50% {
+      top: 360px;
+    }
+  }
+  .iphone {
+    top: 480px;
+    left: 140px;
+    width: 200px;
+  }
+
+  @keyframes float1 {
+    50% {
+      top: 440px;
+    }
+  }
+
+  .herohead {
+    font-size: 50px;
+    margin-top: 80px;
+    color: rgb(236, 247, 255);
+    text-shadow: 2px 2px 8px #ae00ff94;
+  }
+
+  .herodesc {
+    color: rgb(255, 0, 0);
+    backdrop-filter: blur(2px);
+    font-weight: 600;
+    display: none;
+  }
+
+  .herobtn {
+    position: absolute;
+    left: 10%;
+    bottom: -140px;
+    padding: 10px 40px;
+    margin: 40px auto;
+    float: right;
+  }
+  .center {
+    display: none;
+  }
+  .right {
+    width: 100%;
+    font-size: 20px;
+    padding-top: 20px;
+  }
+  .momenu {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: black;
+    width: 100%;
+    height: 100%;
+    padding-top: 70px;
+    transition: 0.4s ease-in-out;
+  }
+  .closebtn {
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+  .mo_link {
+    color: white;
+    display: block;
+    padding: 10px 20px;
+    font-size: 20px;
+    text-transform: capitalize;
+    border-bottom: 1px solid rgb(51, 51, 51);
+  }
 }

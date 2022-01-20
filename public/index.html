@@ -8,18 +8,42 @@
       content="width=device-width, initial-scale=1,minimum-scale=1"
     />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    <meta name="description" content="KORAL BY ADITYA RAY" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <title>React App</title>
+    <title>KORAL BY ADITYA</title>
   </head>
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script>
+      var prevScrollpos = window.pageYOffset;
+      window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+          document.getElementById("topnav").style.top = "0";
+          document.getElementById("topnav").style.background =
+            "rgb(251, 245, 252)";
+          document.getElementById("topnav").style.boxShadow =
+            " 0 2px 4px 0 rgba(0,0,0,.2)";
+
+          if (
+            !(
+              document.body.scrollTop > 80 ||
+              document.documentElement.scrollTop > 80
+            )
+          ) {
+            document.getElementById("topnav").style.background = "transparent";
+            document.getElementById("topnav").style.boxShadow = "none";
+          }
+        } else {
+          document.getElementById("topnav").style.top = "-100px";
+        }
+        prevScrollpos = currentScrollPos;
+      };
+    </script>
   </body>
 </html>

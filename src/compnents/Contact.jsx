@@ -22,31 +22,35 @@ export const Contact = () => {
   };
   const handleSubmit = () => {
     if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-      const payload = {
-        name: name,
-        email: email,
-        subject: subject,
-        service: selected,
-        message: message,
-      };
+      if (name !== "") {
+        const payload = {
+          name: name,
+          email: email,
+          subject: subject,
+          service: selected,
+          message: message,
+        };
 
-      axios
-        .post("https://koralbackend.herokuapp.com/api/quotation/", payload)
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((error) => {
-          alert(error);
-          console.log(error);
-        });
+        axios
+          .post("https://koralbackend.herokuapp.com/api/quotation/", payload)
+          .then((response) => {
+            console.log(response);
+          })
+          .catch((error) => {
+            alert(error);
+            console.log(error);
+          });
 
-      console.log(payload);
+        console.log(payload);
+      } else {
+        alert("enter your name");
+      }
     } else {
       alert("enter a valid email");
     }
   };
   return (
-    <div>
+    <div className="contact_wrap">
       <br />
       <br />
       <h2 className="center">Request a quote today!</h2>

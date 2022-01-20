@@ -1,20 +1,36 @@
 import React from "react";
 import korallogo from "../assets/images/logo-koral.png";
 import { BsSearch, BsCart2, BsFillGridFill } from "react-icons/bs";
+import { FaWindowClose } from "react-icons/fa";
+
 export const Topnav = () => {
-  var prevScrollpos = window.pageYOffset;
-  window.onscroll = function () {
-    var currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
-      document.getElementById("navbar").style.top = "0";
-    } else {
-      document.getElementById("navbar").style.top = "-50px";
-    }
-    prevScrollpos = currentScrollPos;
+  const showMenu = () => {
+    document.getElementById("momenu").style.opacity = "1";
+    document.getElementById("momenu").style.zIndex = "1000";
+  };
+  const closeMenu = () => {
+    document.getElementById("momenu").style.opacity = "0";
+    document.getElementById("momenu").style.zIndex = "-1";
   };
   return (
     <div>
-      <div className="topnav">
+      <div className="momenu" id="momenu">
+        <div
+          className="closebtn"
+          onClick={() => {
+            closeMenu();
+          }}
+        >
+          <FaWindowClose />
+        </div>
+        <div className="mo_link">home</div>
+        <div className="mo_link">pages</div>
+        <div className="mo_link">portfolio</div>
+        <div className="mo_link">headers</div>
+        <div className="mo_link">elements</div>
+        <div className="mo_link">blog</div>
+      </div>
+      <div className="topnav" id="topnav">
         <div className="left">
           <img src={korallogo} alt="logo" />
         </div>
@@ -33,7 +49,12 @@ export const Topnav = () => {
           <div className="icons">
             <BsCart2 />
           </div>
-          <div className="icons">
+          <div
+            className="icons"
+            onClick={() => {
+              showMenu();
+            }}
+          >
             <BsFillGridFill />
           </div>
         </div>

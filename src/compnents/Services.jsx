@@ -1,6 +1,7 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Typewriter from "typewriter-effect";
 export const Services = () => {
   const elements = [
     "https://demos.upperthemes.com/koral/demo1/wp-content/uploads/sites/14/2019/07/pink1.jpg",
@@ -29,8 +30,33 @@ export const Services = () => {
   }
   return (
     <div>
-      <div className="wedo">We Do Web Developement</div>
-      <Row>{items}</Row>
+      <div className="wedo">
+        <Typewriter
+          options={{
+            autoStart: true,
+            loop: true,
+          }}
+          onInit={(typewriter) => {
+            typewriter
+
+              .typeString("We Do")
+              .pauseFor(1000)
+              .deleteAll()
+              .typeString("Web Developement")
+              .pauseFor(1000)
+              .deleteAll()
+              .typeString("Illustration")
+              .pauseFor(1000)
+              .deleteAll()
+              .typeString("Consulting")
+              .pauseFor(1000)
+              .start();
+          }}
+        />
+      </div>
+      <div className="imgcon">
+        <Row>{items}</Row>
+      </div>
       <div className="c_strip">
         <h2>
           <b>Lets Work Together!</b>
