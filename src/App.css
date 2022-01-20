@@ -1,38 +1,472 @@
-.App {
+:root {
+  --pink: rgb(248, 3, 140);
+  --voilet: rgb(100, 104, 223);
+  --cyan: rgb(99, 180, 247);
+  --darkvoilet: rgb(99, 180, 247);
+  --lightpink: rgb(250, 114, 104);
+  --heading: rgb(27, 27, 27);
+}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
+
+body {
+  overflow-x: hidden;
+}
+/* footer */
+.foot_out {
+  text-align: center;
+}
+.icon_cont {
+  width: 200px;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px auto;
+  color: rgb(54, 54, 54);
+}
+
+.pinkhover:hover {
+  color: var(--lightpink);
+  transition: 0.6s;
+}
+
+/* topnav */
+.topnav {
+  display: flex;
+  font-family: "Montserrat", sans-serif;
+  background: rgb(251, 245, 252);
+  z-index: 100;
+}
+
+.left {
+  width: 20%;
+  padding: 20px 20px;
+}
+.center {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 30px 20px;
+  color: rgb(37, 37, 37);
+}
+.right {
+  width: 20%;
+  display: flex;
+  justify-content: right;
+  padding: 30px 20px;
+  color: rgb(37, 37, 37);
+}
+.link {
+  transition: 0.1s ease-in-out;
+  cursor: pointer;
+}
+.link:hover {
+  color: var(--lightpink);
+  border-bottom: 2px solid var(--lightpink);
+  margin-top: -2px;
+}
+.icons {
+  padding: 0px 15px;
+}
+/* about */
+.heading {
+  font-size: 35px;
+  font-weight: 900;
+  text-transform: capitalize;
+  color: rgb(36, 36, 36);
+}
+
+.number {
+  font-size: 70px;
+  font-weight: 700;
+}
+.one {
+  color: var(--pink);
+}
+.two {
+  color: var(--voilet);
+}
+.three {
+  color: var(--cyan);
+}
+
+.a_head {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--heading);
+}
+.a_content {
+  width: 80%;
+  margin-top: 20px;
+}
+.skills {
+  background-image: url(../src/assets/images/apple_shapebg3-1.jpg);
+  padding-top: 140px;
+  padding-bottom: 140px;
+  background-position: center;
+  background-size: cover;
+}
+.s_purple {
+  color: var(--voilet);
+}
+.s_lightpink {
+  color: var(--lightpink);
+}
+
+/* progress bar */
+
+.progress_out {
+  position: relative;
+  height: 36px;
+  width: 100%;
+  background-color: rgb(233, 233, 233);
+  margin: 10px 0px;
+}
+.progress_in {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 60%;
+  height: 36px;
+
+  padding: 0px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.progress_text {
+  color: white;
+  text-transform: capitalize;
+  font-weight: 500;
+  line-height: 36px;
+  vertical-align: middle;
+}
+
+.progress_percent {
+  color: white;
+  text-transform: capitalize;
+  font-weight: 500;
+  line-height: 36px;
+  vertical-align: middle;
+  float: right;
+}
+
+/* services and works */
+
+.wedo {
+  width: 100%;
+  height: 280px;
+  line-height: 280px;
+  vertical-align: middle;
+  text-align: center;
+  background: rgb(129, 50, 210);
+  font-size: 50px;
+  font-weight: 900;
+  color: white;
+}
+.appear {
+  position: relative;
+  background: var(--lightpink);
+  z-index: 10;
+  height: 300px;
+  width: 100%;
+}
+.gridimage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  transition: 0.4s ease-in-out;
+  z-index: 12;
+}
+.gridimage:hover {
+  opacity: 0.1;
+}
+
+.appear_text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 300px;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  font-weight: 500;
+  z-index: 11;
+  transform: scale(0);
+  transition: 0.6s ease-in-out;
+}
+.gridimage:hover + .appear_text {
+  transform: scale(1);
+}
+
+.c_strip {
+  width: 100%;
+  height: 400px;
+  vertical-align: middle;
+  text-align: center;
+  background: rgb(255, 242, 255);
+  padding: 100px 0px;
+}
+.c_btn {
+  height: 50px;
+  background: none;
+  border: 2px solid var(--lightpink);
+  border-radius: 25px;
+  width: 200px;
+  text-align: center;
+  color: var(--lightpink);
+  font-weight: 600;
+  transition: 0.2s ease-in-out;
+}
+.c_btn:hover {
+  background: var(--lightpink);
+  color: white;
+}
+.c_strip h5 {
+  color: rgb(61, 61, 61);
+  padding: 20px 0px;
+}
+
+/* hero component */
+@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap");
+.hero {
+  width: 100%;
+  background-image: url(../src/assets/images/apple_shapebg1.png);
+  background-size: cover;
+  min-height: 130vh;
+  z-index: -1;
+}
+.macbook {
+  position: absolute;
+  top: 40px;
+  left: -100px;
+  z-index: 1;
+  animation: float 4s infinite;
+}
+
+@keyframes float {
+  50% {
+    top: 80px;
+  }
+}
+.iphone {
+  position: absolute;
+  top: 220px;
+  left: 360px;
+  z-index: 1;
+  animation: float1 4s infinite;
+}
+
+@keyframes float1 {
+  50% {
+    top: 260px;
+  }
+}
+
+.herohead {
+  font-size: 70px;
+  font-weight: 700;
+  margin-top: 30px;
+  padding: 10px;
+  line-height: 1.1;
+  font-family: "Mochiy Pop P One", sans-serif;
+  color: rgb(1, 0, 32);
+  letter-spacing: 4px;
+}
+
+.herodesc {
+  padding: 40px 10px;
+  font-size: 20px;
+  line-height: 1.5;
+  color: rgb(51, 51, 51);
+}
+
+.herobtn {
+  background: var(--pink);
+  border: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 10px 40px;
+  transition: 0.2s;
+}
+.herobtn:hover {
+  opacity: 0.9;
+  margin-top: -5px;
+}
+
+/* team section */
+.team_wrapper {
+  padding: 20px 40px;
+}
+.teamtext {
+  font-size: 50px;
+  letter-spacing: 4px;
+}
+.line {
+  display: block;
+  line-height: 1.2;
+}
+
+.line.abd {
+  font-weight: 900;
+}
+
+.line.abf {
+  font-weight: 900;
+  font-size: 55px;
+  color: var(--voilet);
+}
+
+.team_card {
+  position: relative;
+  margin: 20px;
+  width: 80%;
+}
+
+.team_img {
+  width: 100%;
+  opacity: 0.6;
+  transition: 0.2s ease-in;
+}
+.team_card.t1 {
+  background: rgb(0, 255, 221);
+}
+.team_card.t2 {
+  background: rgb(204, 0, 255);
+}
+.team_card.t3 {
+  background: rgb(0, 183, 255);
+}
+.team_card.t4 {
+  background: rgb(255, 187, 0);
+}
+.team_img:hover {
+  opacity: 0.3;
+}
+.team_name {
+  position: absolute;
+  bottom: 40px;
+  left: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  text-shadow: 2px 2px 8px #000000;
+  transition: 0.3s ease-in;
+}
+.team_designation {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  text-shadow: 2px 2px 8px #000000;
+  transition: 0.3s ease-in;
+}
+.team_social {
+  position: absolute;
+  bottom: 0px;
+  left: 20px;
+  transform: scale(0);
+  transition: 0.3s ease-in;
+  display: flex;
+  width: 60px;
+  justify-content: space-between;
+  text-shadow: 2px 2px 8px #000000;
+  color: white;
+}
+.team_img:hover ~ .team_social {
+  bottom: 20px;
+  transform: scale(1);
+}
+.team_img:hover ~ .team_name {
+  bottom: 60px;
+}
+.team_img:hover ~ .team_designation {
+  bottom: 40px;
+}
+.team_social:hover {
+  color: var(--pink);
+}
+
+/* contact us */
+.center {
+  width: 100%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.contact_card {
+  width: 60%;
+  margin: 40px auto;
+  box-shadow: rgb(224 229 231) 5px 5px 25px 0px;
+  padding: 20px;
+  transition: 0.4s ease-in;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.label {
+  padding: 10px 0px;
+  font-size: 16px;
+  font-weight: 400;
+}
+input[type="text"] {
+  width: 90%;
+  height: 50px;
+  border: 2px solid rgb(201, 201, 201);
+  margin: 10px 0px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+textarea {
+  width: 100%;
+  height: 220px;
+  border: 2px solid rgb(201, 201, 201);
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border: 2px solid rgb(235, 235, 235);
+}
+
+textarea:focus {
+  border: 2px solid rgb(235, 235, 235);
+  outline: none;
+}
+.select {
+  width: 90%;
+  height: 50px;
+  border: 2px solid rgb(201, 201, 201);
+  margin: 10px 0px;
+  text-align: right;
+  line-height: 40px;
+  vertical-align: middle;
+  padding: 0px 10px;
+}
+
+.dropdown {
+  margin-top: -10px;
+  display: none;
+  width: 90%;
+  box-shadow: rgb(224 229 231) 5px 5px 25px 0px;
+  transition: 0.4s ease-out;
+}
+.droplink {
+  padding: 5px 20px;
+  font-size: 18px;
+}
+
+.droplink:hover {
   color: white;
+  background: var(--lightpink);
 }
 
-.App-link {
-  color: #61dafb;
+.select:hover + .dropdown {
+  display: block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dropdown:hover {
+  display: block;
 }
