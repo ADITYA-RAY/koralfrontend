@@ -1,5 +1,4 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 export const Services = () => {
@@ -15,9 +14,14 @@ export const Services = () => {
   const items = [];
   for (const [index, value] of elements.entries()) {
     items.push(
-      <Col xs={12} md={4} style={{ paddingLeft: "0", paddingRight: "0" }}>
+      <Col
+        xs={12}
+        md={4}
+        style={{ paddingLeft: "0", paddingRight: "0" }}
+        className={index}
+      >
         <div className="appear">
-          <img src={value} alt="image" className="gridimage" />
+          <img src={value} alt="gridimage" className="gridimage" />
           <div className="appear_text">Photography</div>
         </div>
       </Col>
