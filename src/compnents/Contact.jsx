@@ -21,7 +21,7 @@ export const Contact = () => {
     document.getElementById("selected").innerHTML = selected;
   };
   const handleSubmit = () => {
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+    if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
       const payload = {
         name: name,
         email: email,
