@@ -35,6 +35,9 @@ export const Contact = () => {
           .post("https://koralbackend.herokuapp.com/api/quotation/", payload)
           .then((response) => {
             console.log(response);
+            if (response.status === 201) {
+              alert("Quote Sent Sucessfully!");
+            }
           })
           .catch((error) => {
             alert(error);
